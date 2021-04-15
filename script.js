@@ -1,20 +1,37 @@
-
+const question = document.querySelector('#question');
+const choices = Array.from(document.querySelectorAll('.choice-text'));
+const progressText = document.querySelector('#progressText');
+const scoreText = document.querySelector('#score');
 var startBtn = document.querySelector("#startBtn");
 
 //Write start quiz function, hide greetings div, display questions
+var quiz = function() {
+    
+    let timer = setInterval(function() {
+        if (countdown == 10) {
+            document.getElementById('time-remaining').style.color = "yellow";
+        }
+        if (countdown == 0) {
+            clearInterval(timer);
+            mainPopulate(endFile, endScreen);
+            document.getElementById('statement').innerText = "Time's up!";
+            clearMessage();
+        }
+        if (countdownStop == true) {
+            clearInterval(timer);
+            countdownStop == false;
+        }
+        document.getElementById('time-remaining').innerText = countdown;
+        countdown--;
+        }, 1000);
+}
 
+//Display timer and start countdown when button pressed
 
-//Set interval timer
-
-
-//For loop to latch onto HTML
-
-
-//Give user space to write initials and store in local storage
-
+//Start time
+let timeRemaining = 60;
 
 startBtn.addEventListener("click", startQuiz);
-
 
 // var quizQuestions = [
 //     {
@@ -50,3 +67,17 @@ startBtn.addEventListener("click", startQuiz);
 //         correctAnswer:'d'
 //     },
 // ];
+
+//Add questions to the page
+
+//For loop to latch onto HTML
+
+//When question is answered, move onto the next questions
+
+//Notify when wrong answer, subtract time from the clock
+
+//Finish quiz and give final score
+
+//Game is over when questions are over or timer reaches 0
+
+//Even listener to write initials and store in local storage

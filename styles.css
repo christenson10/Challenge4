@@ -1,3 +1,8 @@
 .questions {
     display: none;
 }
+
+body {
+    color: black;
+    align-items: center;
+}
