@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
 
-</head>
-<body>
+  <body>
+    <!-- High Scores link and timer in Nav Bar -->
+    <nav>
+      <div class="high-scores">
+        <a href="highscore.html">High Scores</a>
+      </div>
+      <div class="timer">
+      <div id="countdown">Time: <span id="time"> 60</span>
+        </div>
 
+    </nav>
+
+    <!-- Greeting and Start Button -->
     <div class="greeting">
-        <h1>Welcome to the Quiz!</h1>
-        <button id="startBtn"></button>
+      <h1>Welcome to the Quiz!</h1>
+      <button id="startBtn">Start Game</button>
     </div>
 
-    <div class="questions">
+    <main>
+      <div class="questions">
         <h1>Question Text</h1>
-        <button id="button1" class="btn">
-            Answer Text
-        </button>
-        <button id="button2" class="btn">
-            Answer Text
-        </button>
-        <button id="button3" class="btn">
-            Answer Text
-        </button>
-        <button id="button4" class="btn">
-            Answer Text
-        </button>        
-    </div>
+        <button id="button1" class="btn">Answer Text</button>
+        <button id="button2" class="btn">Answer Text</button>
+        <button id="button3" class="btn">Answer Text</button>
+        <button id="button4" class="btn">Answer Text</button>
+      </div>
+    </main>
 
-   
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>
