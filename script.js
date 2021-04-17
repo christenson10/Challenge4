@@ -1,21 +1,22 @@
-var questions = document.getElementById('#questions');
-var timer = document.getElementById("timer");
-var scoreText = document.getElementById('#score');
-var startBtn = document.getElementById("#startBtn");
-
-
-
+var questions = document.getElementById('questions');
+var timer = document.getElementById("time");
+var scoreText = document.getElementById('score');
+var startBtn = document.getElementById("startBtn");
+var greeting = document.querySelector(".greeting");
+var questionText = document.getElementById("questionText");
+var button1 = document.getElementById("button1");
+var button2 = document.getElementById("button2");
+var button3 = document.getElementById("button3");
+var button4 = document.getElementById("button4");
 
 // var questionArr = [{question:}]
-
 var timeLeft = 60;
 
 //Display timer and start countdown when button pressed
 function startQuiz() {
-    greeting.display = "none";
-    timer.textContent = "Time: 60";
-    startBtn.display = "none";
-
+    greeting.style.display = "none";
+    timer.style.textContent = "Time: 60";
+    console.log('hello');
     countdown();
 }
 
@@ -48,15 +49,15 @@ function countdown() {
 
     var timerInterval = setInterval(function () {
         if (timeLeft > 1) {
-            timeInterval.textContent = timeLeft + ' seconds';
+            timer.textContent = timeLeft + ' seconds';
             timeLeft--;
-        } else if {timeLeft === 1) {
-            timeInterval.textContent = timeLeft + ' second';
+        } else if (timeLeft === 1) {
+            timer.textContent = timeLeft + ' second';
             timeLeft--;
         } else {
-            timeLeft.textContent = "";
+            timer.textContent = "";
             clearInterval(timerInterval);
-            displayMessage():
+            displayMessage();
         }
     }, 1000);
     showQuestions();
@@ -73,11 +74,11 @@ function countdown() {
 // document.getElementById("timer").innerHTML= "0:" + seconds/1000;
 
 
-// Quiz questions and answer
+// Quiz questions and answer, loop through questions. When question starts, change text content of page to give location of text content.
 var questions = [
     {
         question:'Which of the following is NOT true about anonymous functions?',
-        answers:['They are created using the function operator or arrow syntax.', 'They dont have a name.', 'They are most commonly used as a callback function.', 'They are NOT created at runtime.'] 
+        answers:['They are created using the function operator or arrow syntax.', 'They dont have a name.', 'They are most commonly used as a callback function.', 'They are NOT created at runtime.'],
         correctAnswer: 'They are NOT created at runtime.',
     },
     {
@@ -97,23 +98,32 @@ var questions = [
     },
 ];
 
-//Add questions to the page
 function showQuestions () {
-
+    questionText.textContent = questions[0].question;
+    button1.textContent = questions[0].answers[0];
+    button2.textContent = questions[0].answers[1];
+    button3.textContent = questions[0].answers[2];
+    button4.textContent = questions[0].answers[3];
 }
 
+//code click events for when button is clicked.
+    //compare text content of button to correct answer of the question
+    //display next question
 
 
-//For loop to latch onto HTML
-for(var i=0; i < questions.length; i++){
-    var response = window.prompt(question[i].prompt);
-    if (response == questions[i].answer){
-        score++;
-        alert("Correct!");
-    } else {
-        alert("Wrong!");
-    }
-}
+// //Add questions to the page
+// function showQuestions () {
+//     //For loop to latch onto HTML
+//     for(var i=0; i < questions.length; i++){
+//         var response = window.prompt(questions[i].prompt);
+//         if (response == questions[i].answer){
+//             score++;
+//             alert("Correct!");
+//         } else {
+//             alert("Wrong!");
+//         }
+//     }
+// }
 
 //When question is answered, move onto the next questions.
     //"onclick" function to target 
@@ -125,10 +135,10 @@ for(var i=0; i < questions.length; i++){
 //Local storage for initials input and list
 var initialsInput = document.getElementById("inputName");
 var initialsList = document.querySelector("showScore");
-var submit = document.getElementById()
+var submit = document.getElementById("initialsButton");
 
 //Event listener for high scores
-submit.addEventListener("click", function () {
+submit.addEventListener("click", function ( ) {
     localStorage.setItem("initialsInput", initialsInput.value);
     highScores();
 });
@@ -151,7 +161,5 @@ function highScores() {
 //     saveFiles.push(saveObj);
 //     console.log(saveFiles);
 //     saveScore();
-
-
 
 startBtn.addEventListener("click", startQuiz);
