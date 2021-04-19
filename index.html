@@ -23,12 +23,13 @@
     <!-- Greeting and start button -->
     <div class="greeting">
       <h1>Welcome to the Quiz!</h1>
+      <h3>Test your knowledge with the following bootcamp questions. Good luck!</h3>
       <button id="startBtn" class="button">Start Game</button>
     </div>
 
     <!--Quiz questions and display-->
     <main>
-      <div class="quizQuestions">
+      <div class="quizQuestions" style="display: none">
         <h1 id="questionText">Question Text</h1>
         <!--Need to target buttons and click events with "onclick"-->
         <button id="button1" class="button" onclick="checkAnswer(1)">Answer Text</button>
@@ -39,12 +40,13 @@
     </main>
 
     <!--Show user scores and enter intials-->
-    <div id="initials">
+    <div class="initials">
+      <label class="enter-initials"></label>
+      <input type="text" placeholder="Enter initials:" class="initials"/>
+      <button id="initialsButton" class="button">Submit</button>
       <h2></h2>
-      <div id="score"></div>
     </div>
-
-    <button id="initialsButton" class="button">Submit</button>
+    
 
     <!--Display scoreboard in list form-->
     <div id="scoreboard">
