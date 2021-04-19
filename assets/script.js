@@ -5,6 +5,7 @@ var startBtn = document.getElementById("startBtn");
 var greeting = document.querySelector(".greeting");
 var questionText = document.getElementById("questionText");
 var quizQuestions = document.querySelector(".quizQuestions");
+var initials = document.getElementById("initials");
 
 //Answers
 var button1 = document.getElementById("button1");
@@ -43,16 +44,6 @@ function countdown() {
   }, 1000);
   showQuestions();
 }
-
-// document.getElementById("timer").innerHTML = seconds;
-// }
-// if (seconds >0 ) { // so it doesn't go to -1
-//    seconds--;
-// } else {
-//    clearInterval(timer);
-//    alert("Quiz over!");
-// }
-// document.getElementById("timer").innerHTML= "0:" + seconds/1000;
 
 // Quiz questions and answer, loop through questions. When question starts, change text content of page to give location of text content.
 var questions = [
@@ -129,7 +120,7 @@ function checkAnswer(buttonNum) {
     alert("Correct!");
   } else {
     alert("Incorrect!");
-    timeLeft = timeLeft - 15;
+    timeLeft -= 15;
   }
   if (nextQuestion < prevQuestion) {
     nextQuestion++;
@@ -139,10 +130,19 @@ function checkAnswer(buttonNum) {
   }
 }
 
-//Notify when wrong answer, subtract time from the clock
-
 //Game is over when questions are over or timer reaches 0
+
+//Go back on click
+var back = document.getElementById("back");
+back.addEventListener("click", goBack);
+function goBack() {
+    location.reload();
+    return false;
+}
+
 //Finish quiz and give final score
+
+
 
 //Local storage for initials input and list
 var initialsInput = document.getElementById("inputName");
