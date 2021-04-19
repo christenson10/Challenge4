@@ -27,7 +27,6 @@ function startQuiz() {
 
 // Timer and countdown function from 60, continue to show question if time is still left
 function countdown() {
-  var timeLeft = 60;
 
   var timerInterval = setInterval(function () {
     if (timeLeft > 1) {
