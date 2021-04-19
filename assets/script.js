@@ -101,11 +101,11 @@ var questions = [
 ];
 
 function showQuestions () {
-    questionText.textContent = questions[0].question;
-    button1.textContent = questions[0].answers[0];
-    button2.textContent = questions[0].answers[1];
-    button3.textContent = questions[0].answers[2];
-    button4.textContent = questions[0].answers[3];
+    questionText.textContent = questions[nextQuestion].question;
+    button1.textContent = questions[nextQuestion].answers[0];
+    button2.textContent = questions[nextQuestion].answers[1];
+    button3.textContent = questions[nextQuestion].answers[2];
+    button4.textContent = questions[nextQuestion].answers[3];
 }
 
 //code click events for when button is clicked.
@@ -116,13 +116,17 @@ var prevQuestion = questions.length - 1;
 var nextQuestion = 0;
 var score = 0;
 
-function checkAnswer (answer) {
-    if(answer == questions[nextQuestion].correct) {
+function checkAnswer (buttonNum) {
+    console.log(buttonNum)
+
+    if(questions[nextQuestion].answers[buttonNum -1 ]
+        ==
+        questions[nextQuestion].correctAnswer) {        
         score++;
         alert("Correct!");
     } else {
         alert("Incorrect!");
-        timeLeft -= 10;
+        timeLeft = timeLeft - 10;
     } if (nextQuestion < prevQuestion) {
         nextQuestion++;
         showQuestions();
@@ -131,23 +135,8 @@ function checkAnswer (answer) {
     }
 }
 
-// //Add questions to the page
-// function showQuestions () {
-//     //For loop to latch onto HTML
-//     for(var i=0; i < questions.length; i++){
-//         var response = window.prompt(questions[i].prompt);
-//         if (response == questions[i].answer){
-//             score++;
-//             alert("Correct!");
-//         } else {
-//             alert("Wrong!");
-//         }
-//     }
-// }
 
-//When question is answered, move onto the next questions.
-    //"onclick" function to target 
-    //Notify when wrong answer, subtract time from the clock
+//Notify when wrong answer, subtract time from the clock
 
 //Game is over when questions are over or timer reaches 0
 //Finish quiz and give final score
@@ -167,19 +156,5 @@ submit.addEventListener("click", function ( ) {
 function highScores() {
 
 }
-    //Return home button
-    //Clear scores button
-
-// $inputButton.addEventListener("click", function(e) {
-//     e.preventDefault();
-//     loadScore();
-//     let initials = $nameInput.value;
-//     let saveObj = {
-//         initials: initials,
-//         score: score
-//     };
-//     saveFiles.push(saveObj);
-//     console.log(saveFiles);
-//     saveScore();
 
 startBtn.addEventListener("click", startQuiz);
