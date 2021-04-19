@@ -23,7 +23,7 @@
     <!-- Greeting and start button -->
     <div class="greeting">
       <h1>Welcome to the Quiz!</h1>
-      <button id="startBtn">Start Game</button>
+      <button id="startBtn" class="button">Start Game</button>
     </div>
 
     <!--Quiz questions and display-->
@@ -31,10 +31,10 @@
       <div class="quizQuestions">
         <h1 id="questionText">Question Text</h1>
         <!--Need to target buttons and click events with "onclick"-->
-        <button id="button1" class="button">Answer Text</button>
-        <button id="button2" class="button">Answer Text</button>
-        <button id="button3" class="button">Answer Text</button>
-        <button id="button4" class="button">Answer Text</button>
+        <button id="button1" class="button" onclick="checkAnswer('button1')">Answer Text</button>
+        <button id="button2" class="button" onclick="checkAnswer('button2')">Answer Text</button>
+        <button id="button3" class="button" onclick="checkAnswer('button3')">Answer Text</button>
+        <button id="button4" class="button" onclick="checkAnswer('button4')">Answer Text</button>
       </div>
     </main>
 
@@ -44,7 +44,7 @@
       <div id="score"></div>
     </div>
 
-    <button id="initialsButton">Submit</button>
+    <button id="initialsButton" class="button">Submit</button>
 
     <!--Display scoreboard in list form-->
     <div id="scoreboard">

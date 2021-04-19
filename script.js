@@ -4,6 +4,8 @@ var scoreText = document.getElementById('score');
 var startBtn = document.getElementById("startBtn");
 var greeting = document.querySelector(".greeting");
 var questionText = document.getElementById("questionText");
+
+//Answers
 var button1 = document.getElementById("button1");
 var button2 = document.getElementById("button2");
 var button3 = document.getElementById("button3");
@@ -110,6 +112,24 @@ function showQuestions () {
     //compare text content of button to correct answer of the question
     //display next question
 
+var prevQuestion = questions.length - 1;
+var nextQuestion = 0;
+var score = 0;
+
+function checkAnswer (answer) {
+    if(answer == questions[nextQuestion].correct) {
+        score++;
+        alert("Correct!");
+    } else {
+        alert("Incorrect!");
+        timeLeft -= 10;
+    } if (nextQuestion < prevQuestion) {
+        nextQuestion++;
+        showQuestions();
+    } else {
+        timer.style.display = "none";
+    }
+}
 
 // //Add questions to the page
 // function showQuestions () {
