@@ -26,7 +26,7 @@ https://christenson10.github.io/Challenge4/
 
 ## Pictures
 
-![Screenshot1](assets\Screenshot.jpg)
+![Screenshot1](Screenshot.jpg)
 
 ## Created by:
 Alex Christenson, 2021.
